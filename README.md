@@ -1,16 +1,5 @@
 # Mystic-Criminal
 
-<<<<<<< HEAD
-User Story
-As a person who wants to go to the national parks, I want to know if the weather at the park I want to go to is good.
-
-Acceptance Criteria
-1. The app should provide accurate and up-to-date information about the weather conditions at the national park that the user is interested in visiting.
-2. The app should be able to retrieve weather data from reliable sources, such as the National Weather Service or other trusted weather providers.
-3. The app should allow the user to select the national park they are interested in visiting from a list of options.
-4. The app should display the current weather conditions at the park, including temperature, precipitation, wind speed, and any relevant warnings or advisories.
-5. The app should also provide a forecast for the next several days, so that the user can plan their trip accordingly.
-=======
 # User Story
 AS A USER looking to go on a trip to a National Park
 I WANT to be able to check all National Parks and their weather
@@ -67,4 +56,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
->>>>>>> 64b457da7a43aae44b9410d27f985b4c13490cd0
