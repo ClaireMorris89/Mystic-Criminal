@@ -9,12 +9,13 @@
   <link rel="stylesheet" href="./assets/style.css">
 </head>
 
-<body>
+<body class="bg-purple-200 h-5">
+
   <header>
     <h1 class="mt-0 mb-2 text-5xl font-medium leading-tight text-primary">National Parks Weather</h1>
     <div id='day'>
-    <h5 id="today"></h5>
-    <h6 id="time"></h6>
+    <h5 id='today'></h5>
+    <h6 id='time'></h6>
   </div>
   </header>
   
@@ -79,12 +80,12 @@
 
   <section>
 
-    <div>
-      <input id="weather" name ="weather "type="text" >
+    <div id="weather-input">
+      <input class ='border-indigo-50'id="weather" name ="weather "type="text" placeholder="ideal weather?">
       <button id="weather-btn">Submit</button>
     </div>
 
-    <div id="national-parks-display"></div>
+    <div id="national-parks-display"> National parks here</div>
     
   </section>
 
