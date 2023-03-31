@@ -1,8 +1,6 @@
 header {
     display: flex;
     justify-content: space-between;
+    height: 150px;
+    margin: 20px 20px 20px 20px;
 }
-
-/* #today {
-    text-align:right;
-} */
