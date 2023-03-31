@@ -5,12 +5,13 @@
   <title>National Parks & Weather</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" href="./assets/style.css">
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/style.css">
 </head>
 
 <body>
   <header>
-    <h1>National Parks Weather</h1>
+    <h1 class="mt-0 mb-2 text-5xl font-medium leading-tight text-primary">National Parks Weather</h1>
     <h5>dayjs</h5>
 
   </header>
@@ -74,7 +75,7 @@
     </aside>
 
   <section>
-    
+
     <div>
       <input id="weather" name ="weather "type="text" >
       <button id="weather-btn">Submit</button>
@@ -90,5 +91,7 @@
 </body>
 
 
+<script type="module" src="https://unpkg.com/@blaze/atoms@x.x.x/dist/blaze-atoms/blaze-atoms.esm.js"></script>
+<script nomodule="" src="https://unpkg.com/@blaze/atoms@x.x.x/dist/blaze-atoms/blaze-atoms.js"></script>
 <script src="./assets/script.js"></script>
 </html>
