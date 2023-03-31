@@ -1,0 +1,15 @@
+.sideBar{
+    height: 500px;
+}
+
+.clickState:hover{
+    text-decoration: underline;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* #today {
+    text-align:right;
+} */
