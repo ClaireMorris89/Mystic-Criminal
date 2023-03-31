@@ -12,11 +12,15 @@
 <body>
   <header>
     <h1 class="mt-0 mb-2 text-5xl font-medium leading-tight text-primary">National Parks Weather</h1>
-    <h5>dayjs</h5>
+    <div id='day'>
+    <h5 id="today"></h5>
+    <h6 id="time"></h6>
+  </div>
   </header>
+  
   <main>
   
-    <aside>
+    <aside class="bg-gradient-to-r from-gray-400 to-blue-500 w-48 overflow-auto sideBar">
       <p class="clickState" id="AL">Alabama</p>
       <p class="clickState" id="AK">Alaska</p>
       <p class="clickState" id="AZ">Arizona</p>
@@ -90,6 +94,12 @@
 </body>
 
 
+<script
+      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+      crossorigin="anonymous"
+    ></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script type="module" src="https://unpkg.com/@blaze/atoms@x.x.x/dist/blaze-atoms/blaze-atoms.esm.js"></script>
 <script nomodule="" src="https://unpkg.com/@blaze/atoms@x.x.x/dist/blaze-atoms/blaze-atoms.js"></script>
 <script src="./assets/script.js"></script>
