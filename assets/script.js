@@ -1,6 +1,7 @@
 
-// const weatherApiRootUrl = 'https://api.openweathermap.org';
-// const weatherApiKey = '0a10568fdd1afdff3817a49dfba38d44';
+const weatherApiRootUrl = 'https://api.openweathermap.org';
+const weatherApiKey = '0a10568fdd1afdff3817a49dfba38d44';
+
 const nationalParksRootUrl = 'https://developer.nps.gov/api/v1/parks?'
 const nationalParksApiKey = 'api_key=VCazcMgwXB8fNeltK7qXuenFJWVcO5tvdQsxjhCe'
 
@@ -60,10 +61,70 @@ const nationalParks = {
     WI: ['APOA'],
     WY: ['GRTE', 'YELL', 'DEVN'],
 }
-function openModal(data){
+
+function displayModal(data, name) {
+    console.log(data)
+    let forcastTitle = $('<h1>')
+    forcastTitle.text("5-day forcast:" + name) 
+    let forcastBody = $('<div>')
+    forcastBody.addClass('flex')
+    forcastBody.css('width', '100%')
+
+    for (let i = 0; i < 40; i += 8) {
+        console.log(data.list[i])
+        //All the values that will go in the elements
+        let date = dayjs(data.list[i].dt_txt).format('M/D/YYYY')
+        let temp = data.list[i].main.temp
+        let humidity = data.list[i].main.humidity
+        let windSpeed = data.list[i].wind.speed
+        let weatherIconURL = `https://openweathermap.org/img/w/${data.list[0].weather[0].icon}.png`
+
+        //create all elements
+        let forcastCard = $('<div>')
+        let cardDate = $('<h5>')
+        let cardTemp = $('<p>')
+        let cardHumidity = $('<p>')
+        let cardWindSpeed = $('<p>')
+        let cardWeatherIcon = $('<img>')
+
+        //style all elements with classes from https://getbootstrap.com/docs/5.0/components/card/
+        //give all the element there content
+        forcastCard.addClass('card text-white bg-gray-500 m-3 p-2')
+        forcastCard.css('width', '18rem');
+        cardDate.addClass('text-lg font-bold mb-2')
+        cardDate.text(date)
+        cardTemp.addClass('text-base text-gray-700 leading-normal')
+        cardTemp.text("Temperature: " + temp + "°F")
+        cardHumidity.addClass('text-base text-gray-700 leading-normal')
+        cardHumidity.text("Humidity: " + humidity + "%")
+        cardWindSpeed.addClass('text-base text-gray-700 leading-normal')
+        cardWindSpeed.text("Wind Speed: " + windSpeed + " MPH")
+        cardWeatherIcon.attr('src', weatherIconURL)
+        cardWeatherIcon.css('width', '40%')
+
+        //append all into one card
+        forcastCard.append(cardDate, cardWeatherIcon, cardTemp, cardWindSpeed, cardHumidity)
+
+        //append to the the forcastBody
+        forcastBody.append(forcastCard)
+    }
+    //append all to the html doc
+    nationalParksDisplay.append(forcastTitle, forcastBody)
+}
+
+
+
+function getWeather(data, name) {
     let lat = data.data[0].latitude
     let lon = data.data[0].longitude
-    console.log(lat,lon)
+    let requestURL = `${weatherApiRootUrl}/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${weatherApiKey}`
+    fetch(requestURL)
+        .then(function (data) {
+            return data.json();
+        })
+        .then(function (data) {
+            displayModal(data, name)
+        })
 }
 
 
@@ -83,9 +144,9 @@ function createParkCard(parksArr) {
                 card.addClass('bg-white shadow-md rounded-lg p-6 m-3 max-w-sm mx-auto')
 
                 //title
-                let name = $('<h2>')
-                name.addClass('text-xl font-bold mb-4')
-                name.text(data.data[0].name)
+                let cardName = $('<h2>')
+                cardName.addClass('text-xl font-bold mb-4')
+                cardName.text(data.data[0].name)
 
                 //description
                 let description = $('<p>')
@@ -93,7 +154,7 @@ function createParkCard(parksArr) {
                 description.text(data.data[0].description)
 
                 //link
-                let  link = $('<a>')
+                let link = $('<a>')
                 link.addClass('text-blue-500 hover:underline')
                 link.text('Read more')
                 link.attr('href', data.data[0].url)
@@ -103,11 +164,11 @@ function createParkCard(parksArr) {
                 let button = $('<button>')
                 button.addClass('bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-4')
                 button.text('Open model')
-                button.on('click', function(){
-                    openModal(data)
+                button.on('click', function () {
+                    getWeather(data, data.data[0].name)
                 })
 
-                card.append(name , description, link, button)
+                card.append(cardName, description, link, button)
                 nationalParksDisplay.append(card)
             })
     }
@@ -119,8 +180,6 @@ for (let i = 0; i < clickState.length; i++) {
         //createParkCard(nationalParks.)
     })
 }
-
-
 
 
 
