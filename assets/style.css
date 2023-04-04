@@ -1,35 +1,8 @@
 .sideBar {
-  margin-left: 20px;
-  height: 500px;
-}
-
-header {
-  color: navy;
-  margin: 20px;
-  height: 100px;
-  justify-content: space-between;
-}
-
-#weather-input {
-  margin: 20px;
-}
-
-input {
-  border: 1px solid navy;
-  box-sizing: 40px;
-}
-input,
-input::placeholder {
-  text-align: center;
-}
-button {
-  background-color: white;
-  border: 1px solid black;
+   height: 500px; 
 }
 
 #national-parks-display {
-  margin: 20px;
-  border: 5px solid navy;
-  height: 500px;
-  width: 800px;
+   height: 500px; 
+   width: 800px; 
 }
