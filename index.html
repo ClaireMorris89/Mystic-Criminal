@@ -1,107 +1,118 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>National Parks & Weather</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
 
-<head>
-  <title>National Parks & Weather</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/style.css">
-</head>
+  <body class="bg-red-400 h-5">
+    <header>
+      <h1 class="mt-0 mb-2 text-5xl font-medium leading-tight text-primary">
+        National Parks Weather
+      </h1>
+      <div id="day">
+        <h5 id="today"></h5>
+        <h6 id="time"></h6>
+      </div>
+    </header>
 
-<body class="bg-purple-200 h-5">
+    <main class="flex">
+      <aside class="bg-indigo-900 overflow-auto sideBar">
+        <p class="clickState" id="AL">Alabama</p>
+        <p class="clickState" id="AK">Alaska</p>
+        <p class="clickState" id="AZ">Arizona</p>
+        <p class="clickState" id="AR">Arkansas</p>
+        <p class="clickState" id="CA">California</p>
+        <p class="clickState" id="CO">Colorado</p>
+        <p class="clickState" id="CT">Connecticut</p>
+        <p class="clickState" id="DE">Delaware</p>
+        <p class="clickState" id="DC">District Of Columbia</p>
+        <p class="clickState" id="FL">Florida</p>
+        <p class="clickState" id="GA">Georgia</p>
+        <p class="clickState" id="HI">Hawaii</p>
+        <p class="clickState" id="ID">Idaho</p>
+        <p class="clickState" id="IL">Illinois</p>
+        <p class="clickState" id="IN">Indiana</p>
+        <p class="clickState" id="IA">Iowa</p>
+        <p class="clickState" id="KS">Kansas</p>
+        <p class="clickState" id="KY">Kentucky</p>
+        <p class="clickState" id="LA">Louisiana</p>
+        <p class="clickState" id="ME">Maine</p>
+        <p class="clickState" id="MD">Maryland</p>
+        <p class="clickState" id="MA">Massachusetts</p>
+        <p class="clickState" id="MI">Michigan</p>
+        <p class="clickState" id="MN">Minnesota</p>
+        <p class="clickState" id="MS">Mississippi</p>
+        <p class="clickState" id="MO">Missouri</p>
+        <p class="clickState" id="MT">Montana</p>
+        <p class="clickState" id="NE">Nebraska</p>
+        <p class="clickState" id="NV">Nevada</p>
+        <p class="clickState" id="NH">New Hampshire</p>
+        <p class="clickState" id="NJ">New Jersey</p>
+        <p class="clickState" id="NM">New Mexico</p>
+        <p class="clickState" id="NY">New York</p>
+        <p class="clickState" id="NC">North Carolina</p>
+        <p class="clickState" id="ND">North Dakota</p>
+        <p class="clickState" id="OH">Ohio</p>
+        <p class="clickState" id="OK">Oklahoma</p>
+        <p class="clickState" id="OR">Oregon</p>
+        <p class="clickState" id="PA">Pennsylvania</p>
+        <p class="clickState" id="RI">Rhode Island</p>
+        <p class="clickState" id="SC">South Carolina</p>
+        <p class="clickState" id="SD">South Dakota</p>
+        <p class="clickState" id="TN">Tennessee</p>
+        <p class="clickState" id="TX">Texas</p>
+        <p class="clickState" id="UT">Utah</p>
+        <p class="clickState" id="VT">Vermont</p>
+        <p class="clickState" id="VA">Virginia</p>
+        <p class="clickState" id="VT">Vermont</p>
+        <p class="clickState" id="VA">Virginia</p>
+        <p class="clickState" id="WA">Washington</p>
+        <p class="clickState" id="WV">West Virginia</p>
+        <p class="clickState" id="WI">Wisconsin</p>
+        <p class="clickState" id="WY">Wyoming</p>
+      </aside>
 
-  <header>
-    <h1 class="mt-0 mb-2 text-5xl font-medium leading-tight text-primary">National Parks Weather</h1>
-    <div id='day'>
-    <h5 id='today'></h5>
-    <h6 id='time'></h6>
-  </div>
-  </header>
-  
-  <main>
-  
-    <aside class="bg-gradient-to-r from-gray-400 to-blue-500 w-48 overflow-auto sideBar">
-      <p class="clickState" id="AL">Alabama</p>
-      <p class="clickState" id="AK">Alaska</p>
-      <p class="clickState" id="AZ">Arizona</p>
-      <p class="clickState" id="AR">Arkansas</p>
-      <p class="clickState" id="CA">California</p>
-      <p class="clickState" id="CO">Colorado</p>
-      <p class="clickState" id="CT">Connecticut</p>
-      <p class="clickState" id="DE">Delaware</p>
-      <p class="clickState" id="DC">District Of Columbia</p>
-      <p class="clickState" id="FL">Florida</p>
-      <p class="clickState" id="GA">Georgia</p>
-      <p class="clickState" id="HI">Hawaii</p>
-      <p class="clickState" id="ID">Idaho</p>
-      <p class="clickState" id="IL">Illinois</p>
-      <p class="clickState" id="IN">Indiana</p>
-      <p class="clickState" id="IA">Iowa</p>
-      <p class="clickState" id="KS">Kansas</p>
-      <p class="clickState" id="KY">Kentucky</p>
-      <p class="clickState" id="LA">Louisiana</p>
-      <p class="clickState" id="ME">Maine</p>
-      <p class="clickState" id="MD">Maryland</p>
-      <p class="clickState" id="MA">Massachusetts</p>
-      <p class="clickState" id="MI">Michigan</p>
-      <p class="clickState" id="MN">Minnesota</p>
-      <p class="clickState" id="MS">Mississippi</p>
-      <p class="clickState" id="MO">Missouri</p>
-      <p class="clickState" id="MT">Montana</p>
-      <p class="clickState" id="NE">Nebraska</p>
-      <p class="clickState" id="NV">Nevada</p>
-      <p class="clickState" id="NH">New Hampshire</p>
-      <p class="clickState" id="NJ">New Jersey</p>
-      <p class="clickState" id="NM">New Mexico</p>
-      <p class="clickState" id="NY">New York</p>
-      <p class="clickState" id="NC">North Carolina</p>
-      <p class="clickState" id="ND">North Dakota</p>
-      <p class="clickState" id="OH">Ohio</p>
-      <p class="clickState" id="OK">Oklahoma</p>
-      <p class="clickState" id="OR">Oregon</p>
-      <p class="clickState" id="PA">Pennsylvania</p>
-      <p class="clickState" id="RI">Rhode Island</p>
-      <p class="clickState" id="SC">South Carolina</p>
-      <p class="clickState" id="SD">South Dakota</p>
-      <p class="clickState" id="TN">Tennessee</p>
-      <p class="clickState" id="TX">Texas</p>
-      <p class="clickState" id="UT">Utah</p>
-      <p class="clickState" id="VT">Vermont</p>
-      <p class="clickState" id="VA">Virginia</p>
-      <p class="clickState" id="UT">Utah</p>
-      <p class="clickState" id="VT">Vermont</p>
-      <p class="clickState" id="VA">Virginia</p>
-      <p class="clickState" id="WA">Washington</p>
-      <p class="clickState" id="WV">West Virginia</p>
-      <p class="clickState" id="WI">Wisconsin</p>
-      <p class="clickState" id="WY">Wyoming</p>
-    </aside>
+      <section>
+        <div id="weather-input">
+          <input
+            class="border-indigo-50"
+            id="weather"
+            name="weather "
+            type="text"
+            placeholder="ideal weather?"
+          />
+          <button id="weather-btn">Submit</button>
+        </div>
 
-  <section>
+        <div id="national-parks-display">National parks here</div>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
 
-    <div id="weather-input">
-      <input class ='border-indigo-50'id="weather" name ="weather "type="text" placeholder="ideal weather?">
-      <button id="weather-btn">Submit</button>
-    </div>
-
-    <div id="national-parks-display"> National parks here</div>
-    
-  </section>
-
-  </main>
-  <footer>
-  </footer>
-</body>
-
-
-<script
-      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
-      crossorigin="anonymous"
-    ></script>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script type="module" src="https://unpkg.com/@blaze/atoms@x.x.x/dist/blaze-atoms/blaze-atoms.esm.js"></script>
-<script nomodule="" src="https://unpkg.com/@blaze/atoms@x.x.x/dist/blaze-atoms/blaze-atoms.js"></script>
-<script src="./assets/script.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script
+    type="module"
+    src="https://unpkg.com/@blaze/atoms@x.x.x/dist/blaze-atoms/blaze-atoms.esm.js"
+  ></script>
+  <script
+    nomodule=""
+    src="https://unpkg.com/@blaze/atoms@x.x.x/dist/blaze-atoms/blaze-atoms.js"
+  ></script>
+  <script src="./assets/script.js"></script>
 </html>
