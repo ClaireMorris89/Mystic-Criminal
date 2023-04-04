@@ -8,7 +8,6 @@ const clickState = $('.clickState')
 const nationalParksDisplay = $('#national-parks-display')
 
 
-
 const nationalParks = {
     AL: ['TUSE', 'TUIN'],
     AK: ['DENA', 'GAAR', 'GLBA', 'KATM', 'KEFJ', 'KOVA', 'LAKE', 'WRST'],

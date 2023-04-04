@@ -3,24 +3,30 @@
     height: 500px;
 }
 
-.clickState:hover{
-    text-decoration: underline;
-}
+
 header {
     color: purple;
     margin: 20px;
     height: 100px;
-    display: flex;
     justify-content: space-between;
 } 
 
-main {
-    display: flex;
+h2{
+    font-size: 20px;
+    text-align: center;
 }
+
+p{
+    text-align: center;
+    font-size: small;
+    margin: 10px;
+}
+
+
 
 #weather-input{
     margin: 20px;
-}
+} 
 
 input {
     border: 1px solid purple;
