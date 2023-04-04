@@ -1,44 +1,35 @@
-.sideBar{
-    margin-left: 20px;
-    height: 500px;
+.sideBar {
+  margin-left: 20px;
+  height: 500px;
 }
-
 
 header {
-    color: purple;
-    margin: 20px;
-    height: 100px;
-    justify-content: space-between;
-} 
-
-h2{
-    font-size: 20px;
-    text-align: center;
+  color: navy;
+  margin: 20px;
+  height: 100px;
+  justify-content: space-between;
 }
 
-p{
-    text-align: center;
-    font-size: small;
-    margin: 10px;
+#weather-input {
+  margin: 20px;
 }
-
-
-
-#weather-input{
-    margin: 20px;
-} 
 
 input {
-    border: 1px solid purple;
-    box-sizing: 40px;
-} 
- input, input::placeholder{
-    text-align:center;
- }
+  border: 1px solid navy;
+  box-sizing: 40px;
+}
+input,
+input::placeholder {
+  text-align: center;
+}
+button {
+  background-color: white;
+  border: 1px solid black;
+}
 
- #national-parks-display {
-    margin: 20px;
-    border: 5px solid purple;
-    height: 500px;
-    width: 800px;
-} 
+#national-parks-display {
+  margin: 20px;
+  border: 5px solid navy;
+  height: 500px;
+  width: 800px;
+}

@@ -1,16 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>National Parks & Weather</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
 
-<head>
-  <title>National Parks & Weather</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/style.css">
-</head>
+  <body>
 
-<body class="bg-purple-200 h-5">
-
+   
   <header class="flex">
     <h1 class="mt-0 mb-2 text-5xl font-medium leading-tight text-primary">National Parks Weather</h1>
     <div id='day'>
@@ -77,8 +83,11 @@
       <p class="clickState hover:underline" id="WI">Wisconsin</p>
       <p class="clickState hover:underline" id="WY">Wyoming</p>
     </aside>
+  
+    <section>
+     
+    <div id="national-parks-display">National parks here</div>
 
-  <section>
 
     <div id="weather-input">
       <input class ='border-indigo-50'id="weather" name ="weather "type="text" placeholder="ideal weather?">
