@@ -172,7 +172,7 @@ function createParkCard(parksArr) {
 
                 })
 
-                card.append(cardName, description, link, button)
+                card.append(name, description, link, button)
                 nationalParksDisplay.append(card)
             })
     }
