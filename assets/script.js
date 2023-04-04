@@ -61,10 +61,16 @@ const nationalParks = {
     WI: ['APOA'],
     WY: ['GRTE', 'YELL', 'DEVN'],
 }
-
+function openModal(data){
+    let lat = data.data[0].latitude
+    let lon = data.data[0].longitude
+    console.log(lat,lon)
+}
 
 
 function createParkCard(parksArr) {
+    console.log(nationalParksDisplay[0].children)
+    nationalParksDisplay[0].innerHTML = ""
     for (let i = 0; i < parksArr.length; i++) {
         let requestURL = nationalParksRootUrl + 'parkCode=' + parksArr[i] + '&' + nationalParksApiKey
         fetch(requestURL)
@@ -72,12 +78,38 @@ function createParkCard(parksArr) {
                 return data.json();
             })
             .then(function (data) {
-                let nationalParkName = $('<h2>')
-                let nationalParkDescription = $('<p>')
-                nationalParkName.text(data.data[0].name)
-                nationalParkDescription.text(data.data[0].description)
-                nationalParksDisplay.append(nationalParkName)
-                nationalParksDisplay.append(nationalParkDescription)
+
+                //card
+                let card = $('<div>')
+                card.addClass('bg-white shadow-md rounded-lg p-6 m-3 max-w-sm mx-auto')
+
+                //title
+                let name = $('<h2>')
+                name.addClass('text-xl font-bold mb-4')
+                name.text(data.data[0].name)
+
+                //description
+                let description = $('<p>')
+                description.addClass('text-gray-700')
+                description.text(data.data[0].description)
+
+                //link
+                let  link = $('<a>')
+                link.addClass('text-blue-500 hover:underline')
+                link.text('Read more')
+                link.attr('href', data.data[0].url)
+
+
+                //button
+                let button = $('<button>')
+                button.addClass('bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-4')
+                button.text('Open model')
+                button.on('click', function(){
+                    openModal(data)
+                })
+
+                card.append(name , description, link, button)
+                nationalParksDisplay.append(card)
             })
     }
 }
