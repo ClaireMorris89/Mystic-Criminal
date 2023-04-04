@@ -3,19 +3,11 @@
   height: 500px;
 }
 
-.clickState:hover {
-  text-decoration: underline;
-}
 header {
   color: navy;
   margin: 20px;
   height: 100px;
-  display: flex;
   justify-content: space-between;
-}
-
-main {
-  display: flex;
 }
 
 #weather-input {
