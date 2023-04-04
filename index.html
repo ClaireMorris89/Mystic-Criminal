@@ -14,8 +14,11 @@
 <body>
 
 
-  <header class="flex">
-    <h1 class="mt-0 mb-2 text-5xl font-medium leading-tight text-primary">National Parks Weather</h1>
+
+   
+  <header class="h-20 ml-6 m-4 flex justify-between text-indigo-500">
+    <h1 class="mt-0 mb-2 text-5xl font-medium leading-tight text-primary underline">National Parks Weather</h1>
+
     <div id='day'>
       <h5 id='today'></h5>
       <h6 id='time'></h6>
@@ -24,7 +27,8 @@
 
   <main class="flex">
 
-    <aside class="bg-gradient-to-r from-gray-400 to-blue-500 w-48 overflow-auto sideBar">
+  
+    <aside class="ml-6 pl-2 mr-4 bg-gradient-to-r from-gray-400 to-blue-500 w-48 overflow-auto sideBar">
       <p class="clickState hover:underline" id="AL">Alabama</p>
       <p class="clickState hover:underline" id="AK">Alaska</p>
       <p class="clickState hover:underline" id="AZ">Arizona</p>
@@ -84,12 +88,9 @@
     <section>
 
 
-      <div id="weather-input">
-        <input class='border-indigo-50' id="weather" name="weather " type="text" placeholder="ideal weather?">
-        <button id="weather-btn">Submit</button>
-      </div>
-
-      <div class="overflow-auto sideBar" id="national-parks-display"> </div>
+    <div class=" overflow-auto sideBar border-solid border-2 border-indigo-500" id="national-parks-display" > </div>
+    
+  </section>
 
     </section>
   </main>

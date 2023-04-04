@@ -1,4 +1,5 @@
-# Mystic-Criminal
+# Mystic-Criminal 
+# National Parks & Weather
 
 # User Story
 AS A USER looking to go on a trip to a National Park
@@ -16,7 +17,7 @@ THEN I am given a suggestion for visiting <br>
 
 
 ## Description 
-??
+This website will allow users to select a state and be presented with the national parks in that state. There will be a description of each park and a link to the page on the national parks page that will give more information the user may want. A button will also give the weather forecast for that park when clicked. 
 
 ## Usage
 This website can be used as a hub for users who want to visit a National Park, and need to know what weather to expect, and if it's a good time to go. 
@@ -24,14 +25,11 @@ This website can be used as a hub for users who want to visit a National Park, a
 - Deployed website can be found at : 
 - <img> (Screenshot)
 
-## Table of Contents 
-??
-
 ## Credits 
-- Danielle
-- Jonny
-- Kyler
-- Claire
+- Danielle Memmott
+- Jonny Olsen
+- Kyler Peterson
+- Claire Morris
 
 ## License 
 
