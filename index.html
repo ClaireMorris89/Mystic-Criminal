@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
 
-  <body class="bg-red-400 h-5">
+  <body>
     <header>
       <h1 class="mt-0 mb-2 text-5xl font-medium leading-tight text-primary">
         National Parks Weather
@@ -25,8 +25,10 @@
       </div>
     </header>
 
-    <main class="flex">
-      <aside class="bg-indigo-900 overflow-auto sideBar">
+    <main>
+      <aside
+        class="bg-gradient-to-r from-gray-400 to-blue-500 w-48 overflow-auto sideBar"
+      >
         <p class="clickState" id="AL">Alabama</p>
         <p class="clickState" id="AK">Alaska</p>
         <p class="clickState" id="AZ">Arizona</p>
@@ -74,6 +76,7 @@
         <p class="clickState" id="UT">Utah</p>
         <p class="clickState" id="VT">Vermont</p>
         <p class="clickState" id="VA">Virginia</p>
+        <p class="clickState" id="UT">Utah</p>
         <p class="clickState" id="VT">Vermont</p>
         <p class="clickState" id="VA">Virginia</p>
         <p class="clickState" id="WA">Washington</p>
@@ -83,18 +86,12 @@
       </aside>
 
       <section>
-        <div id="weather-input">
-          <input
-            class="border-indigo-50"
-            id="weather"
-            name="weather "
-            type="text"
-            placeholder="ideal weather?"
-          />
+        <div>
+          <input id="weather" name="weather " type="text" />
           <button id="weather-btn">Submit</button>
         </div>
 
-        <div id="national-parks-display">National parks here</div>
+        <div id="national-parks-display"></div>
       </section>
     </main>
     <footer></footer>
