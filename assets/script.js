@@ -10,6 +10,10 @@ const nationalParksDisplay = $('#national-parks-display')
 const modalBody = $('.modal-body')
 const modalImageDisplay = $('.modalImageDisplay')
 const favoritesDisplay = $('.favoritesDisplay')
+let favoritesArr = JSON.parse(localStorage.getItem('favoritesArr'))
+if(favoritesArr === null){
+    favoritesArr = []
+}
 
 
 const nationalParks = {
@@ -138,9 +142,124 @@ function getWeather(data, name, image) {
         })
 }
 
-function displayFavorites(card){
-    favoritesDisplay.append(card)
+function displayFavorites(data){
+    favoritesDisplay[0].innerHTML = ""
+    favoritesArr.push(data)
+    localStorage.setItem('favoritesArr', JSON.stringify(favoritesArr))
+    console.log(favoritesArr)
+    for(let i=0; i<favoritesArr.length; i++){
+     //card
+     let card = $('<div>')
+             
+                
+     //header
+     let cardHeader = $('<div>')
+     cardHeader.addClass('flex')
+     
+     card.addClass('w-3/4 bg-white border-2 border-solid border-black shadow-md rounded-lg p-6 m-3 max-w-sm mx-auto')
+
+
+     //title
+     let name = $('<h2>')
+     name.addClass('text-xl font-bold mb-4 text-center underline')
+     name.text(favoritesArr[i].data[0].name)
+
+     //favorites button
+     let favButton = $('<button>')
+     favButton.addClass('bg-yellow-500 hover:bg-yellow-700 m-2 p-1 font-bold rounded')
+     favButton.text('Favorite')
+
+     //description
+     let description = $('<p>')
+     description.addClass('text-gray-700 text-center')
+     description.text(favoritesArr[i].data[0].description)
+
+     //link
+     let link = $('<a>')
+     link.addClass('text-blue-500 hover:underline')
+     link.text('Read more')
+     link.attr('href', favoritesArr[i].data[0].url)
+
+
+     //modal button
+     let button = $('<button>')
+     button.addClass('bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-4')
+     button.text('Open Weather')
+     button.attr('data-toggle', 'modal')
+     button.attr('data-target', '#myModal')
+     button.on('click', function () {
+         getWeather(favoritesArr[i], favoritesArr[i].data[0].name, favoritesArr[i].data[0].images[0].url)
+
+     })
+     cardHeader.append(favButton, name)
+     card.append(cardHeader, description, link, button)
+     favoritesDisplay.append(card)
+     
+     favButton.on('click', function(){
+         //displayFavorites(data)
+     })
+
+     favoritesDisplay.addClass('grid grid-cols-3')
+    }
 }
+
+function init(){
+    for(let i=0; i<favoritesArr.length; i++){
+        //card
+        let card = $('<div>')
+                
+                   
+        //header
+        let cardHeader = $('<div>')
+        cardHeader.addClass('flex')
+        
+        card.addClass('w-3/4 bg-white border-2 border-solid border-black shadow-md rounded-lg p-6 m-3 max-w-sm mx-auto')
+   
+   
+        //title
+        let name = $('<h2>')
+        name.addClass('text-xl font-bold mb-4 text-center underline')
+        name.text(favoritesArr[i].data[0].name)
+   
+        //favorites button
+        let favButton = $('<button>')
+        favButton.addClass('bg-yellow-500 hover:bg-yellow-700 m-2 p-1 font-bold rounded')
+        favButton.text('Favorite')
+   
+        //description
+        let description = $('<p>')
+        description.addClass('text-gray-700 text-center')
+        description.text(favoritesArr[i].data[0].description)
+   
+        //link
+        let link = $('<a>')
+        link.addClass('text-blue-500 hover:underline')
+        link.text('Read more')
+        link.attr('href', favoritesArr[i].data[0].url)
+   
+   
+        //modal button
+        let button = $('<button>')
+        button.addClass('bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-4')
+        button.text('Open Weather')
+        button.attr('data-toggle', 'modal')
+        button.attr('data-target', '#myModal')
+        button.on('click', function () {
+            getWeather(favoritesArr[i], favoritesArr[i].data[0].name, favoritesArr[i].data[0].images[0].url)
+   
+        })
+        cardHeader.append(favButton, name)
+        card.append(cardHeader, description, link, button)
+        favoritesDisplay.append(card)
+        
+        favButton.on('click', function(){
+            //displayFavorites(data)
+        })
+   
+        favoritesDisplay.addClass('grid grid-cols-3')
+       }
+}
+
 
 
 function createParkCard(parksArr) {
@@ -201,7 +320,7 @@ function createParkCard(parksArr) {
                 nationalParksDisplay.append(card)
                 
                 favButton.on('click', function(){
-                    displayFavorites(card)
+                    displayFavorites(data)
                 })
 
                 nationalParksDisplay.addClass('grid grid-cols-3')
@@ -218,7 +337,7 @@ for (let i = 0; i < clickState.length; i++) {
 }
 
 
-
+init()
 
 
 
