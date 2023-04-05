@@ -67,7 +67,7 @@ const nationalParks = {
 function displayModal(data, name, image) {
     console.log(data)
     let forcastTitle = $('<h1>')
-    forcastTitle.text("5-day forcast: " + name) 
+    forcastTitle.text("5-day forecast: " + name) 
     let forcastBody = $('<div>')
     forcastBody.addClass('flex')
     forcastBody.css('width', '100%')
