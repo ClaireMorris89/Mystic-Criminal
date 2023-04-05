@@ -155,11 +155,14 @@ function createParkCard(parksArr) {
             .then(function (data) {
                 //card
                 let card = $('<div>')
-                card.addClass('bg-white border-2 border-solid border-black shadow-md rounded-lg p-6 m-3 max-w-sm mx-auto')
+             
                 
                 //header
                 let cardHeader = $('<div>')
                 cardHeader.addClass('flex')
+                
+                card.addClass('w-3/4 bg-white border-2 border-solid border-black shadow-md rounded-lg p-6 m-3 max-w-sm mx-auto')
+
 
                 //title
                 let name = $('<h2>')
@@ -196,9 +199,13 @@ function createParkCard(parksArr) {
                 cardHeader.append(favButton, name)
                 card.append(cardHeader, description, link, button)
                 nationalParksDisplay.append(card)
+                
                 favButton.on('click', function(){
                     displayFavorites(card)
                 })
+
+                nationalParksDisplay.addClass('grid grid-cols-3')
+
             })
     }
 }
