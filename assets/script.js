@@ -166,8 +166,8 @@ function displayFavorites(data){
 
      //favorites button
      let favButton = $('<button>')
-     favButton.addClass('bg-yellow-500 hover:bg-yellow-700 m-2 p-1 font-bold rounded')
-     favButton.text('Favorite')
+     favButton.addClass('bg-white-500 hover:bg-red-700 m-2 p-1 font-bold rounded')
+     favButton.append('<img height="20" src="https://cdn-icons-png.flaticon.com/512/8680/8680092.png" width="20"/>')
 
      //description
      let description = $('<p>')
@@ -223,8 +223,8 @@ function init(){
    
         //favorites button
         let favButton = $('<button>')
-        favButton.addClass('bg-yellow-500 hover:bg-yellow-700 m-2 p-1 font-bold rounded')
-        favButton.text('Favorite')
+        favButton.addClass('bg-white-500 hover:bg-red-700 m-2 p-1 font-bold rounded')
+        favButton.append('<img height="20" src="https://cdn-icons-png.flaticon.com/512/8680/8680092.png" width="20"/>')
    
         //description
         let description = $('<p>')
