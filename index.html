@@ -14,7 +14,7 @@
 
 
 
-   
+
   <header class="h-20 ml-6 m-4 flex justify-between text-indigo-500">
     <h1 class="mt-0 mb-2 text-5xl font-medium leading-tight text-primary underline">National Parks Weather</h1>
 
@@ -26,7 +26,7 @@
 
   <main class="w-full flex">
 
-  
+
     <aside class="w-1/5 ml-6 pl-2 mr-4 bg-gradient-to-r from-gray-400 to-blue-500 w-48 overflow-auto sideBar">
       <p class="clickState hover:underline" id="AL">Alabama</p>
       <p class="clickState hover:underline" id="AK">Alaska</p>
@@ -85,34 +85,36 @@
     </aside>
 
     <section class="w-4/5 mr-5">
+      <div class="flex flex-wrap overflow-auto sideBar border-solid border-2 border-indigo-500"
+        id="national-parks-display"> </div>
+    </section>
+    <section>
+      <h2>Favorites</h2>
+      <div class="favoritesDisplay"></div>
+    </section>
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
 
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Weather</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modalImageDisplay">
 
-    <div class=" overflow-auto sideBar border-solid border-2 border-indigo-500" id="national-parks-display"> </div>
-    
-  </section>
-  <div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-  
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Weather</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
         </div>
-        <div class="modalImageDisplay">
-          
-        </div>
-        <div class="modal-body">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
+
       </div>
-  
     </div>
-  </div>
-  
-  </section>
+
+    </section>
   </main>
   <footer>
 
