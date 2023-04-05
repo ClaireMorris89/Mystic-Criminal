@@ -159,7 +159,7 @@ function createParkCard(parksArr) {
                 
                 //header
                 let cardHeader = $('<div>')
-                cardHeader.addClass('flex')
+                cardHeader.addClass('flex justify-center')
                 
                 card.addClass('w-3/4 bg-white border-2 border-solid border-black shadow-md rounded-lg p-6 m-3 max-w-sm mx-auto')
 
@@ -168,11 +168,12 @@ function createParkCard(parksArr) {
                 let name = $('<h2>')
                 name.addClass('text-xl font-bold mb-4 text-center underline')
                 name.text(data.data[0].name)
-
+              
                 //favorites button
                 let favButton = $('<button>')
-                favButton.addClass('bg-yellow-500 hover:bg-yellow-700 m-2 p-1 font-bold rounded')
-                favButton.text('Favorite')
+                favButton.addClass('bg-white-500 hover:bg-red-700 m-2 p-1 font-bold rounded')
+                favButton.append('<img height="20" src="https://cdn-icons-png.flaticon.com/512/8680/8680092.png" width="20"/>')
+
 
                 //description
                 let description = $('<p>')
@@ -196,7 +197,7 @@ function createParkCard(parksArr) {
                     getWeather(data, data.data[0].name, data.data[0].images[0].url)
 
                 })
-                cardHeader.append(favButton, name)
+                cardHeader.append(name, favButton)
                 card.append(cardHeader, description, link, button)
                 nationalParksDisplay.append(card)
                 
@@ -205,7 +206,7 @@ function createParkCard(parksArr) {
                 })
 
                 nationalParksDisplay.addClass('grid grid-cols-3')
-
+            
             })
     }
 }
