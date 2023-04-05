@@ -100,7 +100,7 @@ function displayModal(data, name, image) {
         cardDate.addClass('text-lg font-bold mb-2')
         cardDate.text(date)
         cardTemp.addClass('text-base text-gray-700 leading-normal')
-        cardTemp.text("Temperature: " + temp + "°F")
+        cardTemp.text("Temperature: " + parseInt(temp) + "°F")
         cardHumidity.addClass('text-base text-gray-700 leading-normal')
         cardHumidity.text("Humidity: " + humidity + "%")
         cardWindSpeed.addClass('text-base text-gray-700 leading-normal')
