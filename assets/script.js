@@ -150,7 +150,7 @@ function createParkCard(parksArr) {
             .then(function (data) {
                 //card
                 let card = $('<div>')
-                card.addClass('bg-white border-2 border-solid border-black shadow-md rounded-lg p-6 m-3 max-w-sm mx-auto')
+                card.addClass('w-3/4 bg-white border-2 border-solid border-black shadow-md rounded-lg p-6 m-3 max-w-sm mx-auto')
 
                 //title
 
@@ -185,6 +185,7 @@ function createParkCard(parksArr) {
 
                 card.append(name, description, link, button)
                 nationalParksDisplay.append(card)
+                nationalParksDisplay.addClass('grid grid-cols-3')
             })
     }
 }
