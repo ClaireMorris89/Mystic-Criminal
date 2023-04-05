@@ -7,6 +7,8 @@ const nationalParksApiKey = 'api_key=VCazcMgwXB8fNeltK7qXuenFJWVcO5tvdQsxjhCe'
 
 const clickState = $('.clickState')
 const nationalParksDisplay = $('#national-parks-display')
+const modalBody = $('.modal-body')
+const modalImageDisplay = $('.modalImageDisplay')
 
 
 const nationalParks = {
@@ -62,13 +64,17 @@ const nationalParks = {
     WY: ['GRTE', 'YELL', 'DEVN'],
 }
 
-function displayModal(data, name) {
+function displayModal(data, name, image) {
     console.log(data)
     let forcastTitle = $('<h1>')
-    forcastTitle.text("5-day forcast:" + name) 
+    forcastTitle.text("5-day forcast: " + name) 
     let forcastBody = $('<div>')
     forcastBody.addClass('flex')
     forcastBody.css('width', '100%')
+    console.log(image)
+    let modalImage = $('<img>')
+    modalImage.attr('src', image)
+    console.log(modalImage)
 
     for (let i = 0; i < 40; i += 8) {
         console.log(data.list[i])
@@ -109,12 +115,16 @@ function displayModal(data, name) {
         forcastBody.append(forcastCard)
     }
     //append all to the html doc
-    nationalParksDisplay.append(forcastTitle, forcastBody)
+    console.log(modalBody)
+    modalBody[0].innerHTML = ""
+    modalImageDisplay[0].innerHTML = ""
+    modalImageDisplay.append(modalImage)
+    modalBody.append(forcastTitle, forcastBody)
 }
 
 
 
-function getWeather(data, name) {
+function getWeather(data, name, image) {
     let lat = data.data[0].latitude
     let lon = data.data[0].longitude
     let requestURL = `${weatherApiRootUrl}/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${weatherApiKey}`
@@ -123,7 +133,7 @@ function getWeather(data, name) {
             return data.json();
         })
         .then(function (data) {
-            displayModal(data, name)
+            displayModal(data, name, image)
         })
 }
 
@@ -138,7 +148,6 @@ function createParkCard(parksArr) {
                 return data.json();
             })
             .then(function (data) {
-
                 //card
                 let card = $('<div>')
                 card.addClass('bg-white border-2 border-solid border-black shadow-md rounded-lg p-6 m-3 max-w-sm mx-auto')
@@ -167,8 +176,10 @@ function createParkCard(parksArr) {
                 let button = $('<button>')
                 button.addClass('bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-4')
                 button.text('Open modal')
+                button.attr('data-toggle', 'modal')
+                button.attr('data-target', '#myModal')
                 button.on('click', function () {
-                    getWeather(data, data.data[0].name)
+                    getWeather(data, data.data[0].name, data.data[0].images[0].url)
 
                 })
 
