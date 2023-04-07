@@ -72,7 +72,7 @@ const nationalParks = {
 function displayModal(data, name, image) {
     console.log(data)
     let forcastTitle = $('<h1>')
-    forcastTitle.text("5-day forcast: " + name) 
+    forcastTitle.text("5-day forecast: " + name) 
     let forcastBody = $('<div>')
     forcastBody.addClass('flex')
     forcastBody.css('width', '100%')
@@ -154,7 +154,8 @@ function displayFavorites(data){
                 
      //header
      let cardHeader = $('<div>')
-     cardHeader.addClass('flex')
+     cardHeader.addClass('flex justify-center')
+
      
      card.addClass('w-3/4 bg-white border-2 border-solid border-black shadow-md rounded-lg p-6 m-3 max-w-sm mx-auto')
 
@@ -191,7 +192,7 @@ function displayFavorites(data){
          getWeather(favoritesArr[i], favoritesArr[i].data[0].name, favoritesArr[i].data[0].images[0].url)
 
      })
-     cardHeader.append(favButton, name)
+     cardHeader.append(name, favButton)
      card.append(cardHeader, description, link, button)
      favoritesDisplay.append(card)
      
@@ -199,7 +200,7 @@ function displayFavorites(data){
          //displayFavorites(data)
      })
 
-     favoritesDisplay.addClass('grid grid-cols-3')
+     favoritesDisplay.addClass('grid grid-cols-5')
     }
 }
 
@@ -211,7 +212,8 @@ function init(){
                    
         //header
         let cardHeader = $('<div>')
-        cardHeader.addClass('flex')
+        cardHeader.addClass('flex justify-center')
+
         
         card.addClass('w-3/4 bg-white border-2 border-solid border-black shadow-md rounded-lg p-6 m-3 max-w-sm mx-auto')
    
@@ -248,7 +250,7 @@ function init(){
             getWeather(favoritesArr[i], favoritesArr[i].data[0].name, favoritesArr[i].data[0].images[0].url)
    
         })
-        cardHeader.append(favButton, name)
+        cardHeader.append(name, favButton)
         card.append(cardHeader, description, link, button)
         favoritesDisplay.append(card)
         
@@ -256,7 +258,7 @@ function init(){
             //displayFavorites(data)
         })
    
-        favoritesDisplay.addClass('grid grid-cols-3')
+        favoritesDisplay.addClass('grid grid-cols-5')
        }
 }
 
