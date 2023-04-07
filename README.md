@@ -27,7 +27,12 @@ This website will allow users to select a state and be presented with the nation
 This website can be used as a hub for users who want to visit a National Park, and need to know what weather to expect, and if it's a good time to go.
 
 - Deployed website can be found at :
-- <img> (Screenshot)
+<img src='/assets/Images/Opening Screenshot.jpeg'>
+<img src='/assets/Images/State Click Screenshot.jpeg'>
+<img src='/assets/Images/Weather Modal Screenshot.jpeg'>
+<img src='/assets/Images/Favorites Screenshot.jpeg'>
+
+
 
 ## Credits
 
